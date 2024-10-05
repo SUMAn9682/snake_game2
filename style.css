@@ -33,13 +33,13 @@
 #scoreBox {
     top: 2vh;
     right: 5vw; /* Responsive positioning */
-    color: #000000;
+    color: hwb(0 92% 5%);
 }
 
 #HighScoreBox {
     top: 8vh;
     right: 5vw;
-    color: #000000;
+    color: #eee9e9;
 }
 
 /* Media query for small devices (phones) */
