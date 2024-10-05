@@ -194,7 +194,7 @@
 /* Media query for smaller screens (responsive design) */
 @media (max-width: 768px) {
     #controls {
-        bottom: 15vh;  /* Push controls higher to avoid overlap */
+        bottom: 5h;  /* Push controls higher to avoid overlap */
         gap: 30px;  /* Reduce gap between buttons for mobile */
     }
     
@@ -211,7 +211,7 @@
 /* Media query for very small devices (like phones in landscape mode) */
 @media (max-width: 480px) {
     #controls {
-        bottom: 20vh;  /* Increase space below controls to prevent overlapping */
+        bottom: 10vh;  /* Increase space below controls to prevent overlapping */
     }
     
     #leftRightContainer {
