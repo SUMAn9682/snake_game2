@@ -131,23 +131,22 @@
 
 /* Style for the control buttons container */
 /* Style for the control buttons container */
+/* Style for the control buttons container */
 #controls {
     position: absolute;
-    top: 60px;  /* Adjust positioning */
-    left: 150px; /* Center the controls horizontally */
-    transform: translateX(-50%); /* Ensure it's properly centered */
+    bottom: 5vh;  /* Positioning the buttons a bit higher above the bottom */
     display: flex;
     flex-direction: column; /* Arrange buttons vertically */
     align-items: center; /* Center the buttons */
-    gap: 50px; /* Space between the up and down buttons */
+    gap: 50px; /* Space between rows */
     z-index: 20; /* Ensure buttons are above other elements */
 }
 
 /* Style for individual button containers for horizontal alignment */
-#leftRightButtons {
+#leftRightContainer {
     display: flex;
-    /* justify-content: center; */
-    gap: 60px; /* Space between left and right buttons */
+    justify-content: center;
+    gap: 40px; /* Space between left and right buttons */
 }
 
 /* Style for buttons */
@@ -191,7 +190,35 @@
     background-color: #17a2b8; /* Cyan color for the right button */
 }
 
-/* Adjustments for better button spacing */
-#upButton, #downButton, #leftButton, #rightButton {
-    margin: 10px; /* Ensure buttons are spaced at least 40px apart */
+/* Media query for smaller screens (responsive design) */
+@media (max-width: 768px) {
+    #controls {
+        bottom: 8vh;  /* Adjust positioning for mobile devices */
+        gap: 30px;  /* Reduce gap between buttons for mobile */
+    }
+    
+    #leftRightContainer {
+        gap: 20px; /* Reduce gap between left and right buttons on smaller screens */
+    }
+
+    .control-button {
+        font-size: 4vh;  /* Increase button size for better touch area on mobile */
+        padding: 10px 15px;  /* Adjust padding for mobile */
+    }
+}
+
+/* Media query for very small devices (like phones in landscape mode) */
+@media (max-width: 480px) {
+    #controls {
+        bottom: 12vh;  /* Push buttons a little higher on very small screens */
+    }
+    
+    #leftRightContainer {
+        gap: 10px;  /* Further reduce gap for very small screens */
+    }
+
+    .control-button {
+        font-size: 3.5vh;  /* Adjust font size for smaller screens */
+        padding: 8px 12px;  /* Smaller padding for compact layout */
+    }
 }
