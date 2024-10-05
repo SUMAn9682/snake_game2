@@ -139,74 +139,65 @@
 }
 
 /* Style for the control buttons container */
+/* Style for the control buttons container */
 #controls {
     position: absolute;
-    bottom: 2vh;  /* Place the buttons at the bottom */
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 5vh; /* Adjust positioning */
+    left: 0;
+    right: 0;
     display: flex;
-    flex-direction: row; /* Arrange buttons horizontally */
-    align-items: center;
-    gap: 4vw; /* Space between buttons, adjusted for screen size */
+    justify-content: center; /* Center the button row horizontally */
+    gap: 40px; /* Base gap between buttons */
     z-index: 20; /* Ensure buttons are above other elements */
-    max-width: 90vw; /* Prevent buttons from going outside the viewport */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-/* Style for individual buttons */
+/* Style for individual button containers for horizontal alignment */
+#leftButton, #rightButton, #upButton, #downButton {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Base gap between left and right buttons */
+}
+
+/* Style for buttons */
 .control-button {
-    font-size: 4vh; /* Responsive font size for buttons */
-    padding: 10px 15px; /* Adjust padding for larger clickable area */
+    font-size: 3vh; /* Responsive font size for buttons */
+    padding: 15px 20px; /* Increase padding for larger clickable area */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent */
     border: none;
     border-radius: 15px; /* More rounded corners */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Improved shadow */
     cursor: pointer;
     transition: all 0.2s; /* Smooth transition for all properties */
-    max-width: 15vw; /* Ensure buttons scale down on smaller screens */
-    flex-shrink: 0; /* Prevent shrinking */
 }
 
-/* Specific styles for the directional buttons */
-#upButton {
-    background-color: #28a745; /* Green color for the up button */
+/* Change background color and scale on hover */
+.control-button:hover {
+    background-color: rgba(0, 150, 255, 0.8); /* Blue background on hover */
+    transform: scale(1.1); /* Scale effect on hover */
 }
 
-#downButton {
-    background-color: #dc3545; /* Red color for the down button */
+/* Change background color and scale on press */
+.control-button:active {
+    transform: scale(0.95); /* Scale effect on press */
+    background-color: rgba(0, 120, 200, 0.8); /* Darker blue background on press */
 }
 
-#leftButton {
-    background-color: #ffc107; /* Yellow color for the left button */
-}
-
-#rightButton {
-    background-color: #17a2b8; /* Cyan color for the right button */
-}
-
-/* Responsive behavior for smaller screens */
+/* Adjust gap for small devices (phones) */
 @media (max-width: 768px) {
     #controls {
-        bottom: 1vh;  /* Adjust bottom position for smaller screens */
-        gap: 3vw;  /* Adjust the gap between buttons */
+        gap: 60px; /* Increase gap between buttons on smaller screens */
     }
-
     .control-button {
-        font-size: 3.5vh;  /* Reduce button size on smaller screens */
-        padding: 8px 10px; /* Reduce padding for smaller screens */
-        max-width: 20vw; /* Scale buttons down to fit smaller screens */
+        font-size: 4vh; /* Make buttons slightly larger on small screens */
     }
 }
 
-/* Additional tweaks for very small devices */
+/* Adjust gap further for very small devices (phones in landscape) */
 @media (max-width: 480px) {
     #controls {
-        gap: 2vw;  /* Reduce gap between buttons */
+        gap: 80px; /* Increase gap even more for very small screens */
     }
-
     .control-button {
-        font-size: 3vh;  /* Further reduce button size */
-        padding: 5px 8px;  /* Further reduce padding */
-        max-width: 25vw; /* Ensure buttons scale down on small screens */
+        font-size: 4.5vh; /* Further increase button size on very small screens */
     }
 }
