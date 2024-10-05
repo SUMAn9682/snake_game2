@@ -147,15 +147,15 @@
     right: 0;
     display: flex;
     justify-content: center; /* Center the button row horizontally */
-    gap: 40px; /* Base gap between buttons */
-    z-index: 20; /* Ensure buttons are above other elements */
+    gap: 90px; /* Base gap between buttons */
+    z-index: 50; /* Ensure buttons are above other elements */
 }
 
 /* Style for individual button containers for horizontal alignment */
 #leftButton, #rightButton, #upButton, #downButton {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Base gap between left and right buttons */
+    gap: 90px; /* Base gap between left and right buttons */
 }
 
 /* Style for buttons */
@@ -185,7 +185,7 @@
 /* Adjust gap for small devices (phones) */
 @media (max-width: 768px) {
     #controls {
-        gap: 60px; /* Increase gap between buttons on smaller screens */
+        gap: 80px; /* Increase gap between buttons on smaller screens */
     }
     .control-button {
         font-size: 4vh; /* Make buttons slightly larger on small screens */
@@ -195,7 +195,7 @@
 /* Adjust gap further for very small devices (phones in landscape) */
 @media (max-width: 480px) {
     #controls {
-        gap: 80px; /* Increase gap even more for very small screens */
+        gap: 100px; /* Increase gap even more for very small screens */
     }
     .control-button {
         font-size: 4.5vh; /* Further increase button size on very small screens */
