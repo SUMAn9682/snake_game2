@@ -45,14 +45,14 @@
 /* Media query for small devices (phones) */
 @media (max-width: 768px) {
     #scoreBox, #HighScoreBox {
-        font-size: 5vh; /* Increase font size for smaller screens */
+        font-size: 9vh; /* Increase font size for smaller screens */
     }
 }
 
 /* Media query for very small devices (phones in landscape) */
 @media (max-width: 480px) {
     #scoreBox, #HighScoreBox {
-        font-size: 6vh; /* Further increase font size for very small screens */
+        font-size: 10vh; /* Further increase font size for very small screens */
     }
 }
 
