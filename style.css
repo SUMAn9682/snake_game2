@@ -132,9 +132,10 @@
 /* Style for the control buttons container */
 /* Style for the control buttons container */
 /* Style for the control buttons container */
+/* General control buttons positioning */
 #controls {
     position: absolute;
-    bottom: 5vh;  /* Positioning the buttons a bit higher above the bottom */
+    bottom: 5vh;  /* Adjust for space below board */
     display: flex;
     flex-direction: column; /* Arrange buttons vertically */
     align-items: center; /* Center the buttons */
@@ -152,73 +153,92 @@
 /* Style for buttons */
 .control-button {
     font-size: 3vh; /* Responsive font size for buttons */
-    padding: 15px 20px; /* Increase padding for larger clickable area */
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent */
+    padding: 15px 20px; /* Larger clickable area */
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
     border: none;
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Improved shadow */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Button shadow */
     cursor: pointer;
-    transition: all 0.2s; /* Smooth transition for all properties */
+    transition: all 0.2s; /* Smooth transition */
 }
 
-/* Change background color and scale on hover */
+/* Hover effect for buttons */
 .control-button:hover {
-    background-color: rgba(0, 150, 255, 0.8); /* Blue background on hover */
-    transform: scale(1.1); /* Scale effect on hover */
+    background-color: rgba(0, 150, 255, 0.8); /* Hover effect color */
+    transform: scale(1.1); /* Enlarge on hover */
 }
 
-/* Change background color and scale on press */
+/* Pressed state for buttons */
 .control-button:active {
-    transform: scale(0.95); /* Scale effect on press */
-    background-color: rgba(0, 120, 200, 0.8); /* Darker blue background on press */
+    transform: scale(0.95); /* Shrink on press */
+    background-color: rgba(0, 120, 200, 0.8); /* Darker color on press */
 }
 
-/* Specific styles for the directional buttons */
+/* Button color styles */
 #upButton {
-    background-color: #28a745; /* Green color for the up button */
+    background-color: #28a745; /* Green for up button */
 }
 
 #downButton {
-    background-color: #dc3545; /* Red color for the down button */
+    background-color: #dc3545; /* Red for down button */
 }
 
 #leftButton {
-    background-color: #ffc107; /* Yellow color for the left button */
+    background-color: #ffc107; /* Yellow for left button */
 }
 
 #rightButton {
-    background-color: #17a2b8; /* Cyan color for the right button */
+    background-color: #17a2b8; /* Cyan for right button */
 }
 
 /* Media query for smaller screens (responsive design) */
 @media (max-width: 768px) {
     #controls {
-        bottom: 8vh;  /* Adjust positioning for mobile devices */
+        bottom: 15vh;  /* Push controls higher to avoid overlap */
         gap: 30px;  /* Reduce gap between buttons for mobile */
     }
     
     #leftRightContainer {
-        gap: 20px; /* Reduce gap between left and right buttons on smaller screens */
+        gap: 20px; /* Reduce gap between left and right buttons */
     }
 
     .control-button {
-        font-size: 4vh;  /* Increase button size for better touch area on mobile */
-        padding: 10px 15px;  /* Adjust padding for mobile */
+        font-size: 4vh;  /* Larger buttons for easier tap */
+        padding: 10px 15px;  /* Smaller padding for compact size */
     }
 }
 
 /* Media query for very small devices (like phones in landscape mode) */
 @media (max-width: 480px) {
     #controls {
-        bottom: 12vh;  /* Push buttons a little higher on very small screens */
+        bottom: 20vh;  /* Increase space below controls to prevent overlapping */
     }
     
     #leftRightContainer {
-        gap: 10px;  /* Further reduce gap for very small screens */
+        gap: 10px;  /* Further reduce gap between buttons */
     }
 
     .control-button {
-        font-size: 3.5vh;  /* Adjust font size for smaller screens */
+        font-size: 3.5vh;  /* Adjust font size for very small screens */
         padding: 8px 12px;  /* Smaller padding for compact layout */
+    }
+}
+
+/* Adjust the board size for mobile devices */
+@media (max-width: 768px) {
+    #board {
+        width: 90vw;  /* Full width for smaller screens */
+        height: 90vw;
+        max-width: 70vh;  /* Adjust board size to avoid overlap */
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 480px) {
+    #board {
+        width: 95vw;  /* Nearly full screen width on very small devices */
+        height: 95vw;
+        max-width: 60vh;  /* Adjust max size to prevent overlap */
+        max-height: 60vh;
     }
 }
